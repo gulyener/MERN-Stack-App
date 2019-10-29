@@ -9,7 +9,7 @@ const { check, validationResult } = require('express-validator');
 
 const User = require('../../models/User');
 
-// @route   STOP api/users
+// @route   POST api/users
 // @desc    Register user
 // @access  Public
 
@@ -35,7 +35,7 @@ router.post(
       let user = await User.findOne({ email });
 
       if (user) {
-        return res.status(400).json({ errors: [{ msj: 'User already exists' }] });
+        return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
       }
 
       // Get users gravatar
