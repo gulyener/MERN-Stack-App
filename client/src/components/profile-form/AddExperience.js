@@ -77,10 +77,8 @@ const AddExperience = ({ addExperience, history }) => {
               checked={current}
               value={current}
               onChange={e => {
-                {
-                  setFormData({ ...formData, current: !current });
-                  toggleDisabled(!toDateDisabled);
-                }
+                setFormData({ ...formData, current: !current });
+                toggleDisabled(!toDateDisabled);
               }}
             />{' '}
             Current Job
@@ -122,4 +120,4 @@ AddExperience.propTypes = {
 export default connect(
   null,
   { addExperience },
-)(AddExperience);
+)(withRouter(AddExperience));

@@ -77,10 +77,8 @@ const AddEducation = ({ addEducation, history }) => {
               checked={current}
               value={current}
               onChange={e => {
-                {
-                  setFormData({ ...formData, current: !current });
-                  toggleDisabled(!toDateDisabled);
-                }
+                setFormData({ ...formData, current: !current });
+                toggleDisabled(!toDateDisabled);
               }}
             />{' '}
             Current School
@@ -122,4 +120,4 @@ AddEducation.propTypes = {
 export default connect(
   null,
   { addEducation },
-)(AddEducation);
+)(withRouter(AddEducation));
