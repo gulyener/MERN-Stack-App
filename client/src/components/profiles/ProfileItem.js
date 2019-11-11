@@ -11,6 +11,8 @@ const ProfileItem = ({
   location,
   skills,
 }) => {
+  console.log(company);
+
   return (
     <div className="profile bg-light">
       <img src={avatar} alt="" className="round-img" />
@@ -24,14 +26,14 @@ const ProfileItem = ({
           View Profile
         </Link>
       </div>
-      <ul>
-        {skills.slice(0, 4).map((skill, i) => (
-          <li key={i} className="text-primary">
+      {/* <ul>
+        {skills.slice(0, 4).map((skill, index) => (
+          <li key={index} className="text-primary">
             <i className="fas fa-check"></i>
             {skill}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

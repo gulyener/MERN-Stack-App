@@ -94,22 +94,14 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      let profile = await Profile.findOne({ user: req.user.id });
-      if (profile) {
-        // Update
-        profile = await Profile.findOneAndUpdate(
-          { user: req.user.id },
-          { $set: profileFields },
-          { new: true },
-        );
+      // from https://github.com/bradtraversy/devconnector_2.0/blob/master/routes/api/profile.js
 
-        return res.json(profile);
-      }
-
-      // Create
-      profile = new Profile(profileFields);
-
-      await profile.save();
+      // Using upsert option (creates new doc if no match is found):
+      const profile = await Profile.findOneAndUpdate(
+        { user: req.user.id },
+        { $set: profileFields },
+        { new: true, upsert: true },
+      );
       res.json(profile);
     } catch (err) {
       console.error(err.message);
