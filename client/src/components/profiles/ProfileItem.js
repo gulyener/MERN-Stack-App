@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 const ProfileItem = ({
   profile: {
     user: { _id, name, avatar },
+    status,
+    company,
+    location,
+    skills,
   },
-  status,
-  company,
-  location,
-  skills,
 }) => {
   console.log(name);
 
@@ -28,13 +28,12 @@ const ProfileItem = ({
       </div>
       <ul>
         {/* temporary fix because skills is undefined and breaks the code*/}
-        {skills !== undefined &&
-          skills.slice(0, 4).map((skill, index) => (
-            <li key={index} className="text-primary">
-              <i className="fas fa-check"></i>
-              {skill}
-            </li>
-          ))}
+        {skills.slice(0, 4).map((skill, index) => (
+          <li key={index} className="text-primary">
+            <i className="fas fa-check"></i>
+            {skill}
+          </li>
+        ))}
       </ul>
     </div>
   );
