@@ -11,7 +11,7 @@ const ProfileItem = ({
   location,
   skills,
 }) => {
-  console.log(company);
+  console.log(name);
 
   return (
     <div className="profile bg-light">
@@ -26,14 +26,16 @@ const ProfileItem = ({
           View Profile
         </Link>
       </div>
-      {/* <ul>
-        {skills.slice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
-            <i className="fas fa-check"></i>
-            {skill}
-          </li>
-        ))}
-      </ul> */}
+      <ul>
+        {/* temporary fix because skills is undefined and breaks the code*/}
+        {skills !== undefined &&
+          skills.slice(0, 4).map((skill, index) => (
+            <li key={index} className="text-primary">
+              <i className="fas fa-check"></i>
+              {skill}
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };
