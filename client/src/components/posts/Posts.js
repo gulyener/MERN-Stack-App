@@ -6,9 +6,9 @@ import { getPosts } from '../../actions/post';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
 
-const Posts = ({ getPosts, post: { posts, loading } }) => {
+const Posts = ({ getPosts, post: { posts, loading }, match }) => {
   useEffect(() => {
-    getPosts();
+    getPosts(match.params.id);
   }, [getPosts]);
 
   return loading ? (
