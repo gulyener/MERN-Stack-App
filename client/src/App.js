@@ -27,6 +27,7 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
+// we can use store before providing
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());

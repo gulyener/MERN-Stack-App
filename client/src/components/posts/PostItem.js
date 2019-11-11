@@ -7,9 +7,9 @@ import { addLike, removeLike } from '../../actions/post';
 
 const PostItem = ({
   auth,
-  post: { _id, text, name, avatar, user, likes, comments, date },
   addLike,
   removeLike,
+  post: { _id, text, name, avatar, user, likes, comments, date },
 }) => {
   return (
     <div className="posts">
