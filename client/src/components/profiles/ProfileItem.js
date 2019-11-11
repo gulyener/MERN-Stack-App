@@ -11,8 +11,6 @@ const ProfileItem = ({
     skills,
   },
 }) => {
-  console.log(name);
-
   return (
     <div className="profile bg-light">
       <img src={avatar} alt="" className="round-img" />
@@ -27,7 +25,6 @@ const ProfileItem = ({
         </Link>
       </div>
       <ul>
-        {/* temporary fix because skills is undefined and breaks the code*/}
         {skills.slice(0, 4).map((skill, index) => (
           <li key={index} className="text-primary">
             <i className="fas fa-check"></i>
