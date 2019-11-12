@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://gulyener:gulyener@devconnector-3ig8t.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "a2fed8acc24232c134e6",
+  "githubSecret": "719e6ed76997543223add6de9ecf4d61ea64b5c3"
+}
