@@ -22,8 +22,8 @@ const PostForm = ({ addPost }) => {
         <textarea
           name="text"
           cols="30"
-          rows="5"
-          placeholder="Comment on this post"
+          rows="8"
+          placeholder="Write a post about any subject you wish..."
           value={text}
           onChange={e => setText(e.target.value)}
           required
@@ -38,7 +38,4 @@ PostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  { addPost },
-)(PostForm);
+export default connect(null, { addPost })(PostForm);

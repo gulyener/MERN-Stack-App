@@ -10,13 +10,13 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   }, [getGithubRepos]);
 
   return (
-    <div className="profile-github">
+    <div className="profile-github p-1">
       <h2 className="text-primary my-1">Github Repos</h2>
       {repos === null ? (
         <Spinner />
       ) : (
         repos.map(repo => (
-          <div key={repo._id} className="repo bg-white p-1 my-1">
+          <div key={repo._id} className="repo bg-white p-2 my-1">
             <div>
               <h4>
                 <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
@@ -25,7 +25,7 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
               </h4>
               <p>{repo.description}</p>
               <div>
-                <ul>
+                <ul className="my-1">
                   <li className="badge badge-primary">Stars: {repo.stargazers_count}</li>
                   <li className="badge badge-dark">Watchers: {repo.watchers_count}</li>
                   <li className="badge badge-light">Forks Count: {repo.forks_count}</li>
@@ -49,7 +49,4 @@ const mapStateToProps = state => ({
   repos: state.profile.repos,
 });
 
-export default connect(
-  mapStateToProps,
-  { getGithubRepos },
-)(ProfileGithub);
+export default connect(mapStateToProps, { getGithubRepos })(ProfileGithub);
